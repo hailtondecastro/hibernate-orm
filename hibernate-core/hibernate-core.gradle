@@ -57,8 +57,17 @@ dependencies {
     provided( libraries.jacc )
     provided( libraries.validation )
     provided( libraries.ant )
-	eclipseConfig ( compileOnly( libraries.ant ) )
-	eclipseConfig ( compileOnly( libraries.logging_annotations ) )
+	eclipseConfig( compileOnly( libraries.ant ) )
+	eclipseConfig( compileOnly( libraries.logging_annotations ) )
+	eclipseConfig( runtime( libraries.junit ) )
+	eclipseConfig( runtime( libraries.junit5_api ) )
+	eclipseConfig( runtime( libraries.junit5_jupiter ) )
+	eclipseConfig( runtime( libraries.junit5_params ) )
+	eclipseConfig( runtime( libraries.junit_bom ) )
+
+	runtime( libraries.junit5_vintage )
+	runtime( libraries.junit5_jupiter )
+	
     provided( libraries.cdi )
 
     testCompile( project(':hibernate-testing') )
@@ -165,6 +174,17 @@ idea {
 }
 
 eclipse {
+	project {
+		resourceFilter {
+			appliesTo = 'FILES_AND_FOLDERS'
+			type = 'EXCLUDE_ALL'
+			recursive = true
+			matcher {
+				id = 'org.eclipse.ui.ide.multiFilter'
+				arguments = '1.0-projectRelativePath-matches-false-false-*test/resources/org/hibernate/test/annotations/naturalid/NaturalIdTest.java'
+			}
+		}
+	}
 	classpath {
 		plusConfigurations += [ configurations.eclipseConfig ]
 		file {
