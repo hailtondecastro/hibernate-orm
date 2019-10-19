@@ -31,6 +31,8 @@ import org.hibernate.sql.exec.spi.DomainParameterBindingContext;
 
 import org.hibernate.testing.orm.junit.ExpectedException;
 import org.hibernate.testing.orm.junit.ExpectedExceptionExtension;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -47,6 +49,10 @@ import static org.hibernate.testing.hamcrest.CollectionMatchers.hasSize;
  */
 @SuppressWarnings("WeakerAccess")
 @ExtendWith( ExpectedExceptionExtension.class )
+@Tags({
+	@Tag("Hibernate6Tests"),
+	@Tag("IdeTests"),
+})
 public class ParameterTests extends BaseSqmUnitTest {
 	@Test
 	@ExpectedException( SemanticException.class )

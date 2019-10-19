@@ -28,6 +28,8 @@ import org.hibernate.testing.util.jpa.DelegatingPersistenceUnitInfo;
 import org.hibernate.testing.util.jpa.PersistenceUnitInfoAdapter;
 import org.hibernate.testing.util.jpa.PersistenceUnitInfoPropertiesWrapper;
 import org.junit.Test;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.instanceOf;
@@ -38,6 +40,10 @@ import static org.hamcrest.MatcherAssert.assertThat;
 /**
  * @author Steve Ebersole
  */
+@Tags({
+	@Tag("Hibernate6Tests"),
+	@Tag("IdeTests"),
+})
 public class PersistenceUnitOverridesTests extends BaseUnitTestCase {
 
 	@Test

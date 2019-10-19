@@ -11,11 +11,17 @@ import org.hibernate.orm.test.query.sqm.BaseSqmUnitTest;
 import org.hibernate.query.sqm.tree.select.SqmSelectStatement;
 
 import org.hibernate.testing.orm.domain.StandardDomainModel;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
 /**
  * @author Steve Ebersole
  */
+@Tags({
+	@Tag("Hibernate6Tests"),
+	@Tag("IdeTests"),
+})
 public class LiteralTests extends BaseSqmUnitTest {
 
 	@Override

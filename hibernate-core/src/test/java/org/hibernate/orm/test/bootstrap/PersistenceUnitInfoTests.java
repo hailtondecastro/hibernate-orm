@@ -20,12 +20,18 @@ import org.hibernate.testing.TestForIssue;
 import org.hibernate.testing.junit4.BaseUnitTestCase;
 import org.hibernate.testing.util.jpa.PersistenceUnitInfoAdapter;
 import org.junit.Test;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 
 import static org.junit.Assert.assertEquals;
 
 /**
  * @author Steve Ebersole
  */
+@Tags({
+	@Tag("Hibernate6Tests"),
+	@Tag("IdeTests"),
+})
 public class PersistenceUnitInfoTests extends BaseUnitTestCase {
 	@Test
 	@TestForIssue( jiraKey = "HHH-13432" )

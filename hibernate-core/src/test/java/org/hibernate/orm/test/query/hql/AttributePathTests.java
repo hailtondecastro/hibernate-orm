@@ -19,7 +19,8 @@ import org.hibernate.query.sqm.tree.from.SqmRoot;
 import org.hibernate.query.sqm.tree.predicate.SqmComparisonPredicate;
 import org.hibernate.query.sqm.tree.select.SqmSelectStatement;
 import org.hibernate.query.sqm.tree.select.SqmSelection;
-
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
@@ -31,6 +32,10 @@ import static org.hamcrest.MatcherAssert.assertThat;
  * @author Steve Ebersole
  */
 @SuppressWarnings("WeakerAccess")
+@Tags({
+	@Tag("Hibernate6Tests"),
+	@Tag("IdeTests"),
+})
 public class AttributePathTests extends BaseSqmUnitTest {
 
 	@Override
