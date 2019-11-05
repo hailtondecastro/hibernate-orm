@@ -64,10 +64,10 @@ eclipse {
 					}
 				}
 				
-				def hibernateCore = new ProjectDependency('/hibernate-core')
-				newSourceSet += [
-					hibernateCore
-				]
+//				def hibernateCore = new ProjectDependency('/hibernate-core')
+//				newSourceSet += [
+//					hibernateCore
+//				]
 				classpath.entries = newSourceSet			
 			}
 		}
